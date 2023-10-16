@@ -56,12 +56,12 @@ body {
   background-size: cover;
 }
 
-#timeDate {
+.timeDate {
   font-size: 24px;
   color: #9D6B7A;
 }
 
-#times {
+.times {
   font-size: 24px;
   color: #9D6B7A;
 }

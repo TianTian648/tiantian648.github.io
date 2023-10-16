@@ -104,13 +104,10 @@ onload = function () {
 
   update();
   setInterval(update, 1000);
-})(); 
-var color_dark = "255,255,255";
-var color_light = "0,0,0";
-var opacity = '0.8';
-var zIndex = "-2";
-var count = "200";
-var Line_act = function (color) {
+})();
+
+//背景黑色线条
+! function () {
   function o(w, v, i) {
     return w.getAttribute(v) || i
   }
@@ -126,9 +123,9 @@ var Line_act = function (color) {
     return {
       l: w,
       z: o(v, "zIndex", -1),
-      o: o(v, "opacity", 0.8),
-      c: o(v, "color", color),
-      n: o(v, "count", 100)
+      o: o(v, "opacity", 0.5),
+      c: o(v, "color", "0,0,0"),
+      n: o(v, "count", 99)
     }
   }
 
@@ -190,10 +187,4 @@ var Line_act = function (color) {
   setTimeout(function () {
     b()
   }, 100)
-}; /* 以下是我自己改的，将上述函数改为声明，在下面选择调用 */
-var lord = document.getElementById("color-toggle-icon").getAttribute('data');
-if (lord == "light") {
-  Line_act(color_dark);
-} else {
-  Line_act(color_light);
-}
+}();

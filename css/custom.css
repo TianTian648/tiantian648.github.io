@@ -45,6 +45,10 @@ html::-webkit-scrollbar-corner {
 	background: #ffaaff;
 	border-radius: 2px;
 }
+html { 
+	cursor: url(/img/Arrow.cur),auto;/* url地址可以是链接，相对位置，绝对位置 */
+	background-color: @theme_background;  /* 写成透明就行 */
+}
  /* 设置背景图片 */
  body {
     background: url(/img/background.jpg);

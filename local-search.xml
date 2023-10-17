@@ -8,7 +8,7 @@
     <link href="/2023/10/16/Leetcode%E6%97%A5%E8%AE%B0/"/>
     <url>/2023/10/16/Leetcode%E6%97%A5%E8%AE%B0/</url>
     
-    <content type="html"><![CDATA[<h3 id="LeetCode392"><a href="#LeetCode392" class="headerlink" title="LeetCode392"></a><a href="https://leetcode.cn/problems/is-subsequence/description/">LeetCode392</a></h3>]]></content>
+    <content type="html"><![CDATA[<h3 id="LeetCode392"><a href="#LeetCode392" class="headerlink" title="LeetCode392"></a><a href="https://leetcode.cn/problems/is-subsequence/description/">LeetCode392</a></h3><p>一道简单的双指针问题，判断子序列，只贴代码，不给解释:<br>​&#96;&#96;&#96;java<br>public static boolean isSubsequence(String s, String t) {<br>        int i &#x3D; 0, j &#x3D; 0;<br>        while (i &lt; s.length() &amp;&amp; j &lt; t.length()) {<br>            if (s.charAt(i) &#x3D;&#x3D; t.charAt(j)) {<br>                i++;<br>                j++;<br>            } else if (j &lt; t.length()) j++;</p><pre><code class="hljs">    &#125;    if (i == s.length()) return true;    return false;&#125;</code></pre><p>​&#96;&#96;&#96;</p>]]></content>
     
     
     <categories>

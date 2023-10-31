@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>LeetCode代码日记(四)</title>
+    <link href="/2023/10/31/LeetCode%E4%BB%A3%E7%A0%81%E6%97%A5%E8%AE%B0(%E5%9B%9B)/"/>
+    <url>/2023/10/31/LeetCode%E4%BB%A3%E7%A0%81%E6%97%A5%E8%AE%B0(%E5%9B%9B)/</url>
+    
+    <content type="html"><![CDATA[<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="LeetCode62-不同路径Ⅱ"><a href="#LeetCode62-不同路径Ⅱ" class="headerlink" title="LeetCode62: 不同路径Ⅱ"></a><a href="https://leetcode.cn/problems/unique-paths-ii/description/">LeetCode62: 不同路径Ⅱ</a></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">uniquePathsWithObstacles</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] obstacleGrid)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">m</span> <span class="hljs-operator">=</span> obstacleGrid.length, n = obstacleGrid[<span class="hljs-number">0</span>].length;<br>        <span class="hljs-type">int</span>[][] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[m][n];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; m; i++) &#123;<br>            <span class="hljs-keyword">if</span> (obstacleGrid[i][<span class="hljs-number">0</span>] == <span class="hljs-number">1</span>) <span class="hljs-keyword">break</span>;<br>            dp[i][<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>; <br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            <span class="hljs-keyword">if</span> (obstacleGrid[<span class="hljs-number">0</span>][i] == <span class="hljs-number">1</span>) <span class="hljs-keyword">break</span>;<br>            dp[<span class="hljs-number">0</span>][i] = <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; m; i++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; j &lt; n; j++) &#123;<br>                <span class="hljs-keyword">if</span> (obstacleGrid[i][j] == <span class="hljs-number">1</span>) &#123;<br>                    dp[i][j] = <span class="hljs-number">0</span>;<br>                    <span class="hljs-keyword">continue</span>;<br>                &#125;<br>                dp[i][j] = dp[i - <span class="hljs-number">1</span>][j] + dp[i][j - <span class="hljs-number">1</span>];<br>            &#125;<br>        &#125;<br>     <br>        <span class="hljs-keyword">return</span> dp[m - <span class="hljs-number">1</span>][n - <span class="hljs-number">1</span>];<br>    &#125;<br></code></pre></td></tr></table></figure><h3 id="LeetCode343-整数拆分"><a href="#LeetCode343-整数拆分" class="headerlink" title="LeetCode343: 整数拆分"></a><a href="https://leetcode.cn/problems/integer-break/description/">LeetCode343: 整数拆分</a></h3><p>递推公式:  <code>dp[i] = Math.max(dp[i], Math.max(j * (i - j), j * dp[i - j]));</code> </p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">integerBreak</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>       <span class="hljs-type">int</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n + <span class="hljs-number">1</span>];<br>       dp[<span class="hljs-number">2</span>] = <span class="hljs-number">1</span>;<br>       <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">3</span>; i &lt;= n; i++) &#123;<br>           <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; j &lt;= i - j; j++) &#123;<br>               dp[i] = Math.max(dp[i], Math.max(j * (i - j), j * dp[i - j]));<br>           &#125;<br>       &#125;<br>       <span class="hljs-keyword">return</span> dp[n];<br>   &#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Leetcode</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>代码练习日记</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Leetcode日记(三)</title>
     <link href="/2023/10/28/Leetcode%E6%97%A5%E8%AE%B0(%E4%B8%89)/"/>
     <url>/2023/10/28/Leetcode%E6%97%A5%E8%AE%B0(%E4%B8%89)/</url>

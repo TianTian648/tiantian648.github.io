@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>elasticsearch</title>
+    <link href="/2023/11/05/elasticsearch/elasticsearch/"/>
+    <url>/2023/11/05/elasticsearch/elasticsearch/</url>
+    
+    <content type="html"><![CDATA[<p> <strong>es的应用场景</strong>: Github的代码搜索&#x2F;搜索引擎&#x2F;电商网站搜索商品。&#x2F;日志和事件数据分析 </p><p> <strong>倒排索引</strong>: 倒排索引的概念是基于MySQL这样的正向索引而言的。对于Mysql中的主键，查询当然是走索引，所以是O(1)的，但是对于模糊字段查询，比如手机型号，就需要逐行扫描，此时时间复杂度变为O(n)，对于超大型表格，这显然是不可以接受的。</p><p> 倒排索引中两个较为重要的概念: </p><ul><li>文档（Document）：用来搜索的数据，其中的每一条数据就是一个文档。例如一个网页、一个商品信息</li><li>词条（Term）：对文档数据或用户搜索数据，利用某种算法分词，得到的具备含义的词语就是词条。例<br>如：我是中国人，就可以分为：我、是、中国人、中国、国人这样的几个词条</li></ul><p>倒排索引的创建过程: </p><ul><li>将每一个文档的数据利用算法分词，得到一个个词条</li><li>创建表，每行数据包括词条、词条所在文档id、位置等信息</li><li>因为词条唯一性，可以给词条创建索引，例如hash表结构索引</li><li>ex： 查询天天的河流再正向索引中需要线性时间，而再倒排索引中只需要分词天天&#x2F;的&#x2F;河流 其对应的id的交集即为所需要查找的数据库索引。</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>SpringCloud</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>微服务重启计划</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>LeetCode每日一题</title>
     <link href="/2023/11/05/LeetCode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     <url>/2023/11/05/LeetCode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/</url>

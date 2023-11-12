@@ -8,7 +8,7 @@
     <link href="/2023/11/12/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%90%8E%E9%98%B2%E7%BA%BF/"/>
     <url>/2023/11/12/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%90%8E%E9%98%B2%E7%BA%BF/</url>
     
-    <content type="html"><![CDATA[<h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="防御方法专题"><a href="#防御方法专题" class="headerlink" title="防御方法专题"></a>防御方法专题</h2><h2 id="Detecting-AI-Trojans-Using-Meta-Neural-Analysis-MNTD"><a href="#Detecting-AI-Trojans-Using-Meta-Neural-Analysis-MNTD" class="headerlink" title="Detecting AI Trojans Using Meta Neural Analysis(MNTD)"></a><a href="https://ieeexplore.ieee.org/document/9519467?denied=">Detecting AI Trojans Using Meta Neural Analysis(MNTD)</a></h2><p>论文源自2021IEEE S&amp;P，该论文提出了元神经分析检测人工智能木马，该检测方法将待检测对象视为一个黑盒，只需要投喂一定的输入，根据输出的结果就可以判别是否含有后门。因此，该方法可以无视后门类型，数据集类型等，具有一定的普适性。</p><p>其检测步骤如下: </p><p><img src="/images/MNTD-1.png" alt="java集合类继承关系图"></p><ul><li>(1)  Shadow model generation.生成一堆干净或者带后门的模型。</li><li>(2)</li></ul>]]></content>
     
     
     <categories>
